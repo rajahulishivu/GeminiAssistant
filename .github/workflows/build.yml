@@ -31,11 +31,11 @@ jobs:
 
     - name: Build Debug APK with Gradle
       run: |
-        ./gradlew assembleDebug > build_output.log 2>&1 || {
+        ./gradlew assembleDebug --stacktrace > build_output.log 2>&1 || {
           echo "========================================="
-          echo "=== BUILD FAILED - LAST 200 LINES OF LOG ==="
+          echo "=== EXACT ERRORS FOUND IN BUILD ==="
           echo "========================================="
-          tail -n 200 build_output.log
+          grep -iE "error|failed|failure|exception" build_output.log || tail -n 50 build_output.log
           exit 1
         }
 
