@@ -33,9 +33,9 @@ jobs:
       run: |
         ./gradlew assembleDebug > build_output.log 2>&1 || {
           echo "========================================="
-          echo "=== EXACT BUILD ERROR (WHAT WENT WRONG) ==="
+          echo "=== BUILD FAILED - LAST 200 LINES OF LOG ==="
           echo "========================================="
-          grep -A 25 "What went wrong" build_output.log || tail -n 100 build_output.log
+          tail -n 200 build_output.log
           exit 1
         }
 
