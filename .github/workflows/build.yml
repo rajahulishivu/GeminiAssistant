@@ -29,15 +29,8 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
-    - name: Build Debug APK with Gradle
-      run: |
-        ./gradlew assembleDebug --stacktrace > build_output.log 2>&1 || {
-          echo "========================================="
-          echo "=== EXACT ERRORS FOUND IN BUILD ==="
-          echo "========================================="
-          grep -iE "error|failed|failure|exception" build_output.log || tail -n 50 build_output.log
-          exit 1
-        }
+    - name: Clean and Build Debug APK
+      run: ./gradlew clean assembleDebug --no-daemon --stacktrace
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
