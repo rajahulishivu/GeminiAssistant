@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.geminiassistant.app-mergeDebugResources-37:/values-v16/values-v16.xml",
+            "outputFile": "com.example.geminiassistant.app-mergeDebugResources-39:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/data/data/com.termux/files/home/.gradle/caches/9.8.0/transforms/2b67607273064bdf21abae2ece4de5f3/transformed/core-1.12.0/res/values-v16/values-v16.xml",
+                    "source": "/data/data/com.termux/files/home/.gradle/caches/transforms-3/ecb74ff3e754f88199543984313ec162/transformed/core-1.12.0/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
